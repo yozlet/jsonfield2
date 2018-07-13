@@ -6,6 +6,7 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
+  - "3.7"
 
 install:
   - pip install -U pip setuptools wheel
@@ -17,12 +18,12 @@ script:
 
 matrix:
   include:
-    - python: 3.6
+    - python: 3.7
       env: TOXENV="isort,lint,coverage"
       after_success:
         - pip install codecov && codecov
 
-    - python: 3.6
+    - python: 3.7
       env: TOXENV="warnings"
   allow_failures:
     - env: TOXENV="warnings"
